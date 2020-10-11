@@ -1,0 +1,1 @@
+exports.Serializer = require('./serializer').Serializer
