@@ -2,13 +2,10 @@
   "name": "jsserializers",
   "version": "1.0.0",
   "description": "",
-  "main": "test.js",
+  "main": "index.js",
   "scripts": {
-    "test": "jest"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
-  "license": "ISC",
-  "devDependencies": {
-    "jest": "^26.4.2"
-  }
+  "license": "ISC"
 }
