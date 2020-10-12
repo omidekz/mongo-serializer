@@ -23,10 +23,13 @@ class Serializer{
                 this.select_fields = fields
             }
             private async handle_document(pure_doc){
+                let select_fields = this.select_fields
                 let result_object: object = {
 
                 }
-                let select_fields = this.select_fields
+                if (select_fields.length == 0){
+                    result_object = pure_doc
+                }
                 for (let i = 0 ; i < select_fields.length ; i++){
                     if (typeof(this[select_fields[i]+"_field"]) == "function"){
                         result_object[select_fields[i]] = await (
