@@ -6,7 +6,7 @@ interface BaseModel<T>{
     
 }
 class Serializer{
-    static extend<T>(Model: BaseModel<T> & T, fields: string[]){
+    static extend<T>(Model: BaseModel<T> & T, fields: string[]): object{
         class dynamic{
             all_fields: Array<string>
             select_fields: string[]
