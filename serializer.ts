@@ -1,12 +1,12 @@
 interface ModelObject{
     obj: object
 }
-interface BaseModel{
-    schema: ModelObject,
+interface BaseModel<T>{
+    schema: ModelObject & T,
     
 }
 class Serializer{
-    static extend(Model: BaseModel, fields: string[]){
+    static extend<T>(Model: BaseModel<T> & T, fields: string[]){
         class dynamic{
             all_fields: Array<string>
             select_fields: string[]
