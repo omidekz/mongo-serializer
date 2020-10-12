@@ -36,7 +36,6 @@ class Serializer{
                 })
             }
             private async handle_document(pure_doc){
-                this['name']
                 let result_object: object = {
 
                 }
