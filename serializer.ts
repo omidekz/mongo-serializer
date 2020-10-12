@@ -15,6 +15,9 @@ class Serializer{
             model_instance: object | object[]
             constructor(model_instance, many: boolean = false){
                 this.all_fields = Object.keys(Model.schema.obj)
+                if (fields[0] == 'all'){
+                    fields = this.all_fields
+                }
                 this.model_instance = model_instance
                 this.many = many
                 this.select_fields = fields
