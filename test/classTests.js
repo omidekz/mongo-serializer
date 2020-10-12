@@ -9,7 +9,7 @@ class A extends bss.extend({schema: {obj: {}}}, ['status', 'Shop']){
     }
 
     Shop(obj){
-        
+
     }
 }
 
