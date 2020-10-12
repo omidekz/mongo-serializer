@@ -1,7 +1,7 @@
 {
-  "name": "jsserializers",
-  "version": "1.0.0",
-  "description": "",
+  "name": "mongoose-model-serializer",
+  "version": "1.0.5",
+  "description": "a serializer for mongoDB models (mongoose driver).",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
