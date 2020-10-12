@@ -1,5 +1,5 @@
 {
-  "name": "mongoose-model-serializer",
+  "name": "mongo-serializer",
   "version": "1.0.5",
   "description": "a serializer for mongoDB models (mongoose driver).",
   "main": "dist/index.js",
