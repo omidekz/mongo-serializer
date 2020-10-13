@@ -8,15 +8,21 @@ interface BaseModel<T>{
 class Serializer{
     static extend<T>(Model: BaseModel<T> & T, fields: string[]): object{
         class dynamic{
+            /*
+            * ** NOTE **
+            * don't declare var that end with "_field"
+            */
             all_fields: Array<string>
             select_fields: string[]
             result: object | object[]
             many: boolean = false
-            model_instance: object | object[]
-            constructor(model_instance, many: boolean = false){
+            model_instance: T | T[]
+            select_all_fields: boolean = false
+            constructor(model_instance: BaseModel<T> & T, many: boolean = false){
                 this.all_fields = Object.keys(Model.schema.obj)
                 this.model_instance = model_instance
                 this.many = many
+                this.select_all_fields = fields.length == 0
                 this.select_fields = fields
             }
             private async handle_document(pure_doc){
