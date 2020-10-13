@@ -22,7 +22,18 @@ class Serializer{
                 this.all_fields = Object.keys(Model.schema.obj)
                 this.model_instance = model_instance
                 this.many = many
-                this.select_all_fields = fields.length == 0
+                
+                if (fields.length == 1 
+                    && fields[0] == '*'){
+                    this.select_all_fields = true
+                    fields.pop()
+                }else if(
+                    fields.length > 0 && 
+                    fields[0] == '*'
+                ){
+                    this.select_all_fields = true
+                    fields = fields.slice(1)
+                }
                 this.select_fields = fields
             }
             private async handle_document(pure_doc){
@@ -30,7 +41,7 @@ class Serializer{
                 let result_object: object = {
 
                 }
-                if (select_fields.length == 0){
+                if (this.select_all_fields){
                     result_object = pure_doc
                 }
                 for (let i = 0 ; i < select_fields.length ; i++){
@@ -49,7 +60,7 @@ class Serializer{
             async to_json(){
                 this.model_instance = await this.model_instance
                 fields = this.select_fields
-                
+
                 for (let i = 0 ; i < fields.length ; i++){
                     if (
                         !this.all_fields.indexOf(fields[i]) &&
