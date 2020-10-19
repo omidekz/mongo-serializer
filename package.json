@@ -4,6 +4,14 @@
   "description": "a serializer for mongoDB models (mongoose driver).",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
+  "homepage": "https://github.com/omidekz/mongo-serializer#readme",
+  "repository": {
+    "url": "https://github.com/omidekz/mongo-serializer"
+  },
+  "bugs": {
+    "mail": "omidekz@gmail.com",
+    "url": "https://github.com/omidekz/mongo-serializer/issues"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "tsc",
@@ -11,5 +19,6 @@
   },
   "author": "Omid Karimzade",
   "license": "MIT",
+  "keywords": ["mongodb", "mongoose", "serializer", "mongodb serializer", "mongo serializer", "mongo model serializer"],
   "dependencies": {}
 }
