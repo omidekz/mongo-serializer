@@ -1,5 +1,23 @@
 # Mongo Model Serializer(mongoose driver)
 
+## Description
+
+  ```Serializer``` class has ```extend(Model, fields)``` method.
+    
+  for tell to serializer select all fields just pass ```['*']``` as ```fields``` param
+
+  for tell to serializer selec all fields + some extera methods pass ```['*', 'method_name']``` as ```fields``` param
+
+  methods must create in below format
+
+  ```js  
+  // _field is required
+  methodname_field(obj){ // obj is an instance of you'r Model
+      // method body
+      // return field value
+  }
+  ```
+
 ## Usage
 
 - we have some models
@@ -37,12 +55,17 @@ const serializer = require('mongo-serializer').Serializer
 
 class BasicModel extends serializer.extend(
     models.BasicModel, [
-        'avatar', 'lastUpdate'
+        'avatar', 'lastUpdate', 'age' // age was not in Model Schema
     ]
 ){
     avatar_field(obj){
         return obj.avatar?obj.avatar:'default.png'
     }
+
+    age_field(obj){ // obj is my BasicModel instace
+        return Math.floor(Math.random()*10+10) // return value of age_field
+    }
+
 }
 exports.BasicModelSerializer = BasicModel
 ```
