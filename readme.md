@@ -1,6 +1,6 @@
 # Mongo Model Serializer(mongoose driver)
 
-##
+## Install
   ```npm i mongo-serializer```
 ## Description
 
