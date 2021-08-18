@@ -1,5 +1,7 @@
 # Mongo Model Serializer(mongoose driver)
 
+##
+  ```npm i mongo-serializer```
 ## Description
 
   ```Serializer``` class has ```extend(Model, fields)``` method.
