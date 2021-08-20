@@ -19,6 +19,16 @@
   },
   "author": "Omid Karimzade",
   "license": "MIT",
-  "keywords": ["mongodb", "mongoose", "serializer", "mongodb serializer", "mongo serializer", "mongo model serializer"],
-  "dependencies": {}
+  "keywords": [
+    "mongodb",
+    "mongoose",
+    "serializer",
+    "mongodb serializer",
+    "mongo serializer",
+    "mongo model serializer"
+  ],
+  "devDependencies": {
+    "tsc": "^2.0.3",
+    "typescript": "^4.3.5"
+  }
 }
